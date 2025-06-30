@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package calculator;
+
+// Calculator service definition
+service CalculatorService {
+  // Unary RPC: Client sends one request, server sends one response
+  rpc Add(AddRequest) returns (AddResponse);
+  rpc Subtract(SubtractRequest) returns (SubtractResponse);
+  rpc Multiply(MultiplyRequest) returns (MultiplyResponse);
+  rpc Divide(DivideRequest) returns (DivideResponse);
+}
+
+// Request and response messages for Add operation
+message AddRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message AddResponse {
+  int32 result = 1;
+}
+
+// Request and response messages for Subtract operation
+message SubtractRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message SubtractResponse {
+  int32 result = 1;
+}
+
+// Request and response messages for Multiply operation
+message MultiplyRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message MultiplyResponse {
+  int32 result = 1;
+}
+
+// Request and response messages for Divide operation
+message DivideRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message DivideResponse {
+  double result = 1;
+} 
